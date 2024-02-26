@@ -23,7 +23,7 @@ const NewUserForm = () => {
     const [validUsername, setValidUsername] = useState(false)
     const [password, setPassword] = useState('')
     const [validPassword, setValidPassword] = useState(false)
-    const [roles, setRoles] = useState(["User"])
+    const [roles, setRoles] = useState(["Employee"])
 
     useEffect(() => {
         setValidUsername(USER_REGEX.test(username))
@@ -119,14 +119,14 @@ const NewUserForm = () => {
                 />
 
                 <label className="form__label" htmlFor="roles">
-                    ASSIGNED ROLE:</label>
+                    ASSIGNED ROLES:</label>
                 <select
                     id="roles"
                     name="roles"
                     className={`form__select ${validRolesClass}`}
                     multiple={true}
                     size="3"
-                    value={roles.user}
+                    value={roles}
                     onChange={onRolesChanged}
                 >
                     {options}
